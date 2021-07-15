@@ -1,0 +1,8 @@
+article {
+    margin: 20px 0;
+    padding: 0;
+}
+
+article>p {
+    margin: 0 0 5px;
+}
