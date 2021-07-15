@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 @Service
 @AllArgsConstructor
 public class AuthorService {
-    private AuthorRepository repository;
+    private final AuthorRepository repository;
 
     public DetailedAuthorDTO findOne(String username) {
         return getDetailedDTO(repository.findByUsername(username).orElseThrow(AuthorNotFoundException::new));

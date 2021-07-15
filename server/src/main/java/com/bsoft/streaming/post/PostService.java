@@ -1,9 +1,9 @@
 package com.bsoft.streaming.post;
 
 import com.bsoft.streaming.author.AuthorNotFoundException;
-import com.bsoft.streaming.repositories.AuthorRepository;
 import com.bsoft.streaming.author.AuthorService;
 import com.bsoft.streaming.comment.CommentService;
+import com.bsoft.streaming.repositories.AuthorRepository;
 import com.bsoft.streaming.repositories.PostRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -17,10 +17,10 @@ import java.util.stream.Collectors;
 @Service
 @AllArgsConstructor
 public class PostService {
-    private PostRepository repository;
-    private CommentService commentService;
-    private AuthorService authorService;
-    private AuthorRepository authorRepository;
+    private final PostRepository repository;
+    private final CommentService commentService;
+    private final AuthorService authorService;
+    private final AuthorRepository authorRepository;
 
     public List<PostListingDTO> findAll() {
         return repository.findAll().stream().map(this::getListingDTO).collect(Collectors.toList());

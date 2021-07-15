@@ -1,10 +1,10 @@
 package com.bsoft.streaming.comment;
 
 import com.bsoft.streaming.author.AuthorNotFoundException;
-import com.bsoft.streaming.repositories.AuthorRepository;
 import com.bsoft.streaming.author.AuthorService;
 import com.bsoft.streaming.post.Post;
 import com.bsoft.streaming.post.PostNotFoundException;
+import com.bsoft.streaming.repositories.AuthorRepository;
 import com.bsoft.streaming.repositories.PostRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -15,9 +15,9 @@ import java.time.LocalDateTime;
 @Service
 @AllArgsConstructor
 public class CommentService {
-    private AuthorService authorService;
-    private PostRepository postRepository;
-    private AuthorRepository authorRepository;
+    private final AuthorService authorService;
+    private final PostRepository postRepository;
+    private final AuthorRepository authorRepository;
 
     @Transactional
     public CommentDTO createComment(Long postId, CommentInputDTO comment) {

@@ -14,7 +14,7 @@ import java.util.List;
 @AllArgsConstructor
 public class PostController {
     private final Logger logger = LoggerFactory.getLogger(getClass());
-    private PostService service;
+    private final PostService service;
 
     @SubscribeMapping("/posts/get")
     public List<PostListingDTO> findAll() {

@@ -18,7 +18,7 @@ import org.springframework.stereotype.Controller;
 @AllArgsConstructor
 public class CommentController {
     private final Logger logger = LoggerFactory.getLogger(getClass());
-    private CommentService service;
+    private final CommentService service;
 
     @MessageMapping("/posts/{id}/comment/create")
     @SendTo("/topic/posts/{id}/comment/created")

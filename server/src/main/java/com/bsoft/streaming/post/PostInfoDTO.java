@@ -6,6 +6,7 @@ import lombok.Data;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Objects;
 
 @Data
 public class PostInfoDTO extends PostListingDTO {
@@ -19,5 +20,19 @@ public class PostInfoDTO extends PostListingDTO {
         super(id, title, postedAt, author);
         this.content = content;
         this.comments = comments;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        PostInfoDTO that = (PostInfoDTO) o;
+        return Objects.equals(content, that.content) && Objects.equals(comments, that.comments);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), content, comments);
     }
 }

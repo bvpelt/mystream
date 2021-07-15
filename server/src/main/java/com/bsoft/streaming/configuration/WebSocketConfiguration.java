@@ -15,7 +15,7 @@ import org.springframework.web.socket.config.annotation.WebSocketMessageBrokerCo
 @EnableConfigurationProperties(WebSocketProperties.class)
 @AllArgsConstructor
 public class WebSocketConfiguration implements WebSocketMessageBrokerConfigurer {
-    private WebSocketProperties properties;
+    private final WebSocketProperties properties;
 
     @Override
     public void configureMessageBroker(MessageBrokerRegistry registry) {

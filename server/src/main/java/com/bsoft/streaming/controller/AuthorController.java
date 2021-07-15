@@ -16,7 +16,7 @@ import org.springframework.stereotype.Controller;
 @AllArgsConstructor
 public class AuthorController {
     private final Logger logger = LoggerFactory.getLogger(getClass());
-    private AuthorService service;
+    private final AuthorService service;
 
     @SubscribeMapping("/author/{username}/get")
     public DetailedAuthorDTO findOne(@DestinationVariable("username") String username) {
